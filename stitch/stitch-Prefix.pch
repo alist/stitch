@@ -12,3 +12,22 @@
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
 #endif
+
+#define SRELS RELEASE_SAFELY
+#define RELEASE_SAFELY(__POINTER) { __POINTER = nil; }
+
+#define deviceIsPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+#define deviceIsPhone_ish ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+#define ArrayHasItems(array) (array != nil && [array count] > 0)
+#define StringHasText(string) (string != nil && [string length] > 0)
+#define SetHasItems(set) (set != nil && [set count] > 0)
+
+#define def_bonjourHostName [[UIDevice currentDevice] name]
+
+#define euclideanDistance(pointOne, pointTwo) sqrt(pow((pointOne.x - pointTwo.x),2) + pow((pointOne.y - pointTwo.y),2))
+
+#define rectCenter(rect) CGPointMake((rect.origin.x + rect.size.width/2), (rect.origin.y + rect.size.height/2))
+
+#define rectDescriptionString(rect) [NSString stringWithFormat:@"w:%f h:%f x:%f y:%f",rect.size.width,rect.size.height, rect.origin.x,rect.origin.y]
+
+#define windowFrameForOrientation() (UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])? [[UIApplication sharedApplication] keyWindow].frame:CGRectMake(0, 0,[[UIApplication sharedApplication] keyWindow].frame.size.height, [[UIApplication sharedApplication] keyWindow].frame.size.width))

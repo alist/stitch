@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0B5B6916AA6EB1004E76AE /* swypGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5B6416AA6EB1004E76AE /* swypGestureRecognizer.m */; };
+		4C0B5B6A16AA6EB1004E76AE /* swypInGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5B6616AA6EB1004E76AE /* swypInGestureRecognizer.m */; };
+		4C0B5B6B16AA6EB1004E76AE /* swypOutGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5B6816AA6EB1004E76AE /* swypOutGestureRecognizer.m */; };
+		4C0B5B6E16AA6ED7004E76AE /* swypInfoRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5B6D16AA6ED7004E76AE /* swypInfoRef.m */; };
+		4C0B5B7116AA73C7004E76AE /* STConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B5B7016AA73C7004E76AE /* STConnectionManager.m */; };
+		4CE5DE5316AA5FEB00EBC5E7 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */; };
+		4CE5DE5616AA635200EBC5E7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5DE5516AA635200EBC5E7 /* background.png */; };
 		796ACB2016AA594A0083C73F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796ACB1F16AA594A0083C73F /* UIKit.framework */; };
 		796ACB2216AA594A0083C73F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796ACB2116AA594A0083C73F /* Foundation.framework */; };
 		796ACB2416AA594A0083C73F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796ACB2316AA594A0083C73F /* CoreGraphics.framework */; };
@@ -19,6 +26,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0B5B6316AA6EB1004E76AE /* swypGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swypGestureRecognizer.h; sourceTree = "<group>"; };
+		4C0B5B6416AA6EB1004E76AE /* swypGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = swypGestureRecognizer.m; sourceTree = "<group>"; };
+		4C0B5B6516AA6EB1004E76AE /* swypInGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swypInGestureRecognizer.h; sourceTree = "<group>"; };
+		4C0B5B6616AA6EB1004E76AE /* swypInGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = swypInGestureRecognizer.m; sourceTree = "<group>"; };
+		4C0B5B6716AA6EB1004E76AE /* swypOutGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swypOutGestureRecognizer.h; sourceTree = "<group>"; };
+		4C0B5B6816AA6EB1004E76AE /* swypOutGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = swypOutGestureRecognizer.m; sourceTree = "<group>"; };
+		4C0B5B6C16AA6ED7004E76AE /* swypInfoRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swypInfoRef.h; sourceTree = "<group>"; };
+		4C0B5B6D16AA6ED7004E76AE /* swypInfoRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = swypInfoRef.m; sourceTree = "<group>"; };
+		4C0B5B6F16AA73C6004E76AE /* STConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConnectionManager.h; sourceTree = "<group>"; };
+		4C0B5B7016AA73C7004E76AE /* STConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConnectionManager.m; sourceTree = "<group>"; };
+		4CE5DE5116AA5FEB00EBC5E7 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
+		4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
+		4CE5DE5516AA635200EBC5E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		796ACB1B16AA594A0083C73F /* stitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		796ACB1F16AA594A0083C73F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		796ACB2116AA594A0083C73F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,6 +68,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CE5DE5716AA66EB00EBC5E7 /* Swyp */ = {
+			isa = PBXGroup;
+			children = (
+				4C0B5B6316AA6EB1004E76AE /* swypGestureRecognizer.h */,
+				4C0B5B6416AA6EB1004E76AE /* swypGestureRecognizer.m */,
+				4C0B5B6516AA6EB1004E76AE /* swypInGestureRecognizer.h */,
+				4C0B5B6616AA6EB1004E76AE /* swypInGestureRecognizer.m */,
+				4C0B5B6716AA6EB1004E76AE /* swypOutGestureRecognizer.h */,
+				4C0B5B6816AA6EB1004E76AE /* swypOutGestureRecognizer.m */,
+				4C0B5B6C16AA6ED7004E76AE /* swypInfoRef.h */,
+				4C0B5B6D16AA6ED7004E76AE /* swypInfoRef.m */,
+			);
+			name = Swyp;
+			sourceTree = "<group>";
+		};
 		796ACB1016AA594A0083C73F = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +113,13 @@
 		796ACB2516AA594A0083C73F /* stitch */ = {
 			isa = PBXGroup;
 			children = (
+				4CE5DE5716AA66EB00EBC5E7 /* Swyp */,
 				796ACB2E16AA594A0083C73F /* STAppDelegate.h */,
 				796ACB2F16AA594A0083C73F /* STAppDelegate.m */,
+				4CE5DE5116AA5FEB00EBC5E7 /* STViewController.h */,
+				4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */,
+				4C0B5B6F16AA73C6004E76AE /* STConnectionManager.h */,
+				4C0B5B7016AA73C7004E76AE /* STConnectionManager.m */,
 				796ACB2616AA594A0083C73F /* Supporting Files */,
 			);
 			path = stitch;
@@ -88,6 +128,7 @@
 		796ACB2616AA594A0083C73F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CE5DE5516AA635200EBC5E7 /* background.png */,
 				796ACB2716AA594A0083C73F /* stitch-Info.plist */,
 				796ACB2816AA594A0083C73F /* InfoPlist.strings */,
 				796ACB2B16AA594A0083C73F /* main.m */,
@@ -155,6 +196,7 @@
 				796ACB3216AA594A0083C73F /* Default.png in Resources */,
 				796ACB3416AA594A0083C73F /* Default@2x.png in Resources */,
 				796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */,
+				4CE5DE5616AA635200EBC5E7 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +209,12 @@
 			files = (
 				796ACB2C16AA594A0083C73F /* main.m in Sources */,
 				796ACB3016AA594A0083C73F /* STAppDelegate.m in Sources */,
+				4CE5DE5316AA5FEB00EBC5E7 /* STViewController.m in Sources */,
+				4C0B5B6916AA6EB1004E76AE /* swypGestureRecognizer.m in Sources */,
+				4C0B5B6A16AA6EB1004E76AE /* swypInGestureRecognizer.m in Sources */,
+				4C0B5B6B16AA6EB1004E76AE /* swypOutGestureRecognizer.m in Sources */,
+				4C0B5B6E16AA6ED7004E76AE /* swypInfoRef.m in Sources */,
+				4C0B5B7116AA73C7004E76AE /* STConnectionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +325,7 @@
 				796ACB3B16AA594A0083C73F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

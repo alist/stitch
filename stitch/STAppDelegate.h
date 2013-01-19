@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class STViewController;
 @interface STAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property(nonatomic, strong) STViewController *viewController;
 
 @end
