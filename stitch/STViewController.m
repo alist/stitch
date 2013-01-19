@@ -70,13 +70,9 @@
 	return [gestureRecognizer isKindOfClass:[swypGestureRecognizer class]];
 }
 
--(void)updateImageViewWithImage:(UIImage *)image origin:(CGPoint)origin {
+-(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame {
     imageView.image = image;
-    CGRect f;
-    f.size = image.size;
-    f.origin = origin;
-    imageView.frame = f;
-    
+    imageView.frame = frame;
     NSLog(@"updated image view to %@ :: %@ // %@",imageView, image, NSStringFromCGRect(imageView.frame));
 }
 

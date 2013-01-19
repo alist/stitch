@@ -71,16 +71,15 @@
             lastImageURL = url;
         }
         
-        // resize image            
-        UIGraphicsBeginImageContextWithOptions(boundary, NO, 0.0);
-        [lastImage drawInRect:CGRectMake(0, 0, boundary.width, boundary.height)];
-        UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        
+
         // warning potentially fucked up math here!
+        CGRect frame = CGRectMake(origin.x + screen.width - boundary.width,
+                                  origin.y + screen.height - boundary.height,
+                                  boundary.width,
+                                  boundary.height);
+
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate updateImageViewWithImage:resizedImage origin:CGPointMake(origin.x + screen.width - boundary.width,
-                                                                                    origin.y + screen.height - boundary.height)];
+            [self.delegate updateImageViewWithImage:lastImage frame:frame];
         });        
     });
     

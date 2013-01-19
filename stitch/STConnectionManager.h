@@ -10,7 +10,7 @@
 #import "SocketIO.h"
 
 @protocol STConnectionManagerDelegate <NSObject>
--(void)updateImageViewWithImage:(UIImage *)image origin:(CGPoint)origin;
+-(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame;
 @end
 
 @interface STConnectionManager : NSObject<SocketIODelegate> {
