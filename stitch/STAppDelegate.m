@@ -8,6 +8,7 @@
 
 #import "STAppDelegate.h"
 #import "STViewController.h"
+#import "STConnectionManager.h"
 
 @implementation STAppDelegate
 
@@ -20,6 +21,9 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [[STConnectionManager sharedManager] connect];
+    
     return YES;
 }
 

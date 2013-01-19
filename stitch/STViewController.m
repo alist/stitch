@@ -35,6 +35,9 @@
     bg.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:bg];
     
+    imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:imageView];
+    
     swypInGestureRecognizer *swypInRecognizer = [[swypInGestureRecognizer alloc] initWithTarget:self
                                                                                          action:@selector(swypGestureChanged:)];
     [swypInRecognizer setDelegate:self];
@@ -65,7 +68,13 @@
 	return [gestureRecognizer isKindOfClass:[swypGestureRecognizer class]];
 }
 
-
+-(void)updateImageViewWithImage:(UIImage *)image origin:(CGPoint)origin {
+    imageView.image = image;
+    CGRect f;
+    f.size = image.size;
+    f.origin = origin;
+    imageView.frame = f;
+}
 
 - (void)didReceiveMemoryWarning
 {

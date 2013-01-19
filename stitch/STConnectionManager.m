@@ -7,6 +7,7 @@
 //
 
 #import "STConnectionManager.h"
+#import "SocketIOPacket.h"
 
 @implementation STConnectionManager
 
@@ -21,12 +22,9 @@
 }
 
 
--(id)init {
-    self = [super init];
-    if(self) {
-        // connect to socket.io here....
-    }
-    return self;
+-(void)connect {
+    socket = [[SocketIO alloc] initWithDelegate:self];
+    [socket connectToHost:@"stitch-server.herokuapp.com" onPort:80];
 }
 
 -(void)sendSwypIn:(BOOL)swypIn view:(UIView *)view point:(CGPoint)point {
@@ -38,6 +36,50 @@
     int y = height - (int)point.y;
     
     NSLog(@"sending swype in: %i width %i height %i point %i %i",swypIn,width,height,x,y);
+    
+    [socket sendEvent:@"swypOccurred" withData:@{
+     @"screenSize": @{@"width": [NSNumber numberWithInt:width], @"height": [NSNumber numberWithInt:height]},
+     @"swypPoint": @{@"x": [NSNumber numberWithInt:x], @"y": [NSNumber numberWithInt:y]},
+     @"direction": (swypIn ? @"in" : @"out")
+     }];
+}
+
+- (void)socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet {
+    
+    NSLog(@"recieving data: %@ :: %@",packet.name,packet.data);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if([packet.name isEqualToString:@"updateDisplay"]) {
+            NSLog(@"")
+            NSString *url = packet.dataAsJSON[@"url"];
+            CGSize boundary = CGSizeMake([packet.dataAsJSON[@"boundarySize"][@"width"] doubleValue],
+                                         [packet.dataAsJSON[@"boundarySize"][@"height"] doubleValue]);
+            CGSize screen = CGSizeMake([packet.dataAsJSON[@"screenSize"][@"width"] doubleValue],
+                                       [packet.dataAsJSON[@"screenSize"][@"height"] doubleValue]);
+            CGPoint origin = CGPointMake([packet.dataAsJSON[@"origin"][@"x"] doubleValue],
+                                         [packet.dataAsJSON[@"origin"][@"y"] doubleValue]);
+            
+            if(![url isEqualToString:lastImageURL]) {
+                lastImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+                lastImageURL = url;
+            }
+            
+            // resize image            
+            UIGraphicsBeginImageContextWithOptions(boundary, NO, 0.0);
+            [lastImage drawInRect:CGRectMake(0, 0, boundary.width, boundary.height)];
+            UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            // warning potentially fucked up math here!
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate updateImageViewWithImage:resizedImage origin:CGPointMake(origin.x + screen.width - boundary.width,
+                                                                                        origin.y + screen.height - boundary.height)];
+            });
+        }
+        
+        
+    });
+    
 }
 
 @end

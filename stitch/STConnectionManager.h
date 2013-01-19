@@ -7,10 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SocketIO.h"
 
-@interface STConnectionManager : NSObject
+@protocol STConnectionManagerDelegate <NSObject>
+-(void)updateImageViewWithImage:(UIImage *)image origin:(CGPoint)origin;
+@end
+
+@interface STConnectionManager : NSObject<SocketIODelegate> {
+    SocketIO *socket;
+    
+    NSString *lastImageURL;
+    UIImage *lastImage;
+}
+@property(nonatomic, weak) id<STConnectionManagerDelegate> delegate;
 
 +(STConnectionManager *)sharedManager;
+-(void)connect;
 -(void)sendSwypIn:(BOOL)swypIn view:(UIView *)view point:(CGPoint)point;
 
 @end
