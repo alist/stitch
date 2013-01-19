@@ -44,40 +44,44 @@
      }];
 }
 
-- (void)socketIO:(SocketIO *)socket didReceiveMessage:(SocketIOPacket *)packet {
+-(void)socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet {
+    NSLog(@"recieving json!");
+}
+
+-(void)socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet {
     
-    NSLog(@"recieving data: %@ :: %@",packet.name,packet.data);
+    NSString *name = [(NSDictionary *)packet.name allKeys][0];
+    
+    if(![name isEqualToString:@"updateDisplay"])
+        return;
+    
+    NSDictionary *data = ((NSDictionary *)packet.name)[@"updateDisplay"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        if([packet.name isEqualToString:@"updateDisplay"]) {
-            NSLog(@"")
-            NSString *url = packet.dataAsJSON[@"url"];
-            CGSize boundary = CGSizeMake([packet.dataAsJSON[@"boundarySize"][@"width"] doubleValue],
-                                         [packet.dataAsJSON[@"boundarySize"][@"height"] doubleValue]);
-            CGSize screen = CGSizeMake([packet.dataAsJSON[@"screenSize"][@"width"] doubleValue],
-                                       [packet.dataAsJSON[@"screenSize"][@"height"] doubleValue]);
-            CGPoint origin = CGPointMake([packet.dataAsJSON[@"origin"][@"x"] doubleValue],
-                                         [packet.dataAsJSON[@"origin"][@"y"] doubleValue]);
-            
-            if(![url isEqualToString:lastImageURL]) {
-                lastImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-                lastImageURL = url;
-            }
-            
-            // resize image            
-            UIGraphicsBeginImageContextWithOptions(boundary, NO, 0.0);
-            [lastImage drawInRect:CGRectMake(0, 0, boundary.width, boundary.height)];
-            UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            
-            // warning potentially fucked up math here!
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.delegate updateImageViewWithImage:resizedImage origin:CGPointMake(origin.x + screen.width - boundary.width,
-                                                                                        origin.y + screen.height - boundary.height)];
-            });
+        NSString *url = data[@"url"];
+        CGSize boundary = CGSizeMake([data[@"boundarySize"][@"width"] doubleValue],
+                                     [data[@"boundarySize"][@"height"] doubleValue]);
+        CGSize screen = CGSizeMake([data[@"screenSize"][@"width"] doubleValue],
+                                   [data[@"screenSize"][@"height"] doubleValue]);
+        CGPoint origin = CGPointMake([data[@"origin"][@"x"] doubleValue],
+                                     [data[@"origin"][@"y"] doubleValue]);
+        
+        if(![url isEqualToString:lastImageURL]) {
+            lastImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+            lastImageURL = url;
         }
         
+        // resize image            
+        UIGraphicsBeginImageContextWithOptions(boundary, NO, 0.0);
+        [lastImage drawInRect:CGRectMake(0, 0, boundary.width, boundary.height)];
+        UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
         
+        // warning potentially fucked up math here!
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate updateImageViewWithImage:resizedImage origin:CGPointMake(origin.x + screen.width - boundary.width,
+                                                                                    origin.y + screen.height - boundary.height)];
+        });        
     });
     
 }

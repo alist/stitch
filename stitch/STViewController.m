@@ -53,6 +53,8 @@
     [swypOutRecognizer setDelaysTouchesEnded:NO];
     [swypOutRecognizer setCancelsTouchesInView:NO];
     [self.view addGestureRecognizer:swypOutRecognizer];
+    
+    [[STConnectionManager sharedManager] setDelegate:self];
 }
 
 
@@ -74,6 +76,8 @@
     f.size = image.size;
     f.origin = origin;
     imageView.frame = f;
+    
+    NSLog(@"updated image view to %@ :: %@ // %@",imageView, image, NSStringFromCGRect(imageView.frame));
 }
 
 - (void)didReceiveMemoryWarning
