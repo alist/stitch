@@ -21,5 +21,6 @@
 +(STConnectionManager *)sharedManager;
 -(void)connect;
 -(void)sendSwypIn:(BOOL)swypIn view:(UIView *)view point:(CGPoint)point;
+-(void)sendImageContentURL:(NSString *)url;
 
 @end

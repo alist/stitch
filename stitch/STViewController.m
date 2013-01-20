@@ -58,6 +58,14 @@
     [swypOutRecognizer setDelaysTouchesEnded:NO];
     [swypOutRecognizer setCancelsTouchesInView:NO];
     [self.view addGestureRecognizer:swypOutRecognizer];
+
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(tapGestureTriggered)];
+    [tapRecognizer setDelegate:self];
+    [tapRecognizer setDelaysTouchesBegan:NO];
+    [tapRecognizer setDelaysTouchesEnded:NO];
+    [tapRecognizer setCancelsTouchesInView:NO];
+    [self.view addGestureRecognizer:tapRecognizer];
     
     [[STConnectionManager sharedManager] setDelegate:self];
 }
@@ -71,13 +79,34 @@
 	}
 }
 
+-(void)tapGestureTriggered {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Actions"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Load image", @"Unload content", nil];
+    
+    [actionSheet showInView:self.view];
+}
+
 -(BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
-	return [gestureRecognizer isKindOfClass:[swypGestureRecognizer class]];
+    return YES;
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if(buttonIndex == 0) { // Load image
+        [[STConnectionManager sharedManager] sendImageContentURL:@"http://i.imgur.com/LS7csQT.jpg"];
+    } else if(buttonIndex == 1) { // Unload content
+        [[STConnectionManager sharedManager] sendImageContentURL:@"about:blank"];
+    }
 }
 
 -(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame {
     imageView.image = image;
-    imageView.frame = frame;
+    if(frame.size.width == 0 && frame.size.height == 0)
+        imageView.frame = self.view.bounds;
+    else
+        imageView.frame = frame;
     NSLog(@"updated image view to %@ :: %@ // %@",imageView, image, NSStringFromCGRect(imageView.frame));
 }
 

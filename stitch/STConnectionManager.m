@@ -44,6 +44,10 @@
      }];
 }
 
+-(void)sendImageContentURL:(NSString *)url {
+    [socket sendEvent:@"setContent" withData:@{@"contentURL": url}];
+}
+
 -(void)socketIO:(SocketIO *)socket didReceiveJSON:(SocketIOPacket *)packet {
     NSLog(@"recieving json!");
 }

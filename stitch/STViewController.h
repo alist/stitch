@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "STConnectionManager.h"
 
-@interface STViewController : UIViewController<UIGestureRecognizerDelegate, STConnectionManagerDelegate> {
+@interface STViewController : UIViewController<UIGestureRecognizerDelegate, STConnectionManagerDelegate, UIActionSheetDelegate> {
     UIImageView *imageView;
 }
 
