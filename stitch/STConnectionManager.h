@@ -15,9 +15,6 @@
 
 @interface STConnectionManager : NSObject<SocketIODelegate> {
     SocketIO *socket;
-    
-    NSString *lastImageURL;
-    UIImage *lastImage;
 }
 @property(nonatomic, weak) id<STConnectionManagerDelegate> delegate;
 
