@@ -56,31 +56,33 @@
         return;
     
     NSDictionary *data = ((NSDictionary *)packet.name)[@"updateDisplay"];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *url = data[@"url"];
-        CGSize boundary = CGSizeMake([data[@"boundarySize"][@"width"] doubleValue],
-                                     [data[@"boundarySize"][@"height"] doubleValue]);
-        CGSize screen = CGSizeMake([data[@"screenSize"][@"width"] doubleValue],
-                                   [data[@"screenSize"][@"height"] doubleValue]);
-        CGPoint origin = CGPointMake([data[@"origin"][@"x"] doubleValue],
-                                     [data[@"origin"][@"y"] doubleValue]);
-        
-        if(![url isEqualToString:lastImageURL]) {
-            lastImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-            lastImageURL = url;
-        }
-        
-        CGRect frame = CGRectMake(-origin.x,
-                                  origin.y + screen.height - boundary.height,
-                                  boundary.width,
-                                  boundary.height);
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate updateImageViewWithImage:lastImage frame:frame];
-        });        
-    });
-    
+    NSString *url = data[@"url"];
+    CGSize boundary = CGSizeMake([data[@"boundarySize"][@"width"] doubleValue],
+                                 [data[@"boundarySize"][@"height"] doubleValue]);
+    CGSize screen = CGSizeMake([data[@"screenSize"][@"width"] doubleValue],
+                               [data[@"screenSize"][@"height"] doubleValue]);
+    CGPoint origin = CGPointMake([data[@"origin"][@"x"] doubleValue],
+                                 [data[@"origin"][@"y"] doubleValue]);
+
+    CGRect frame = CGRectMake(-origin.x,
+                              origin.y + screen.height - boundary.height,
+                              boundary.width,
+                              boundary.height);
+
+
+    if([url isEqualToString:@"about:blank"]) {
+        
+    } else if(false) { // TO ALEX: override point for TokBox URLs
+        
+    } else { // default to image URLs
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate updateImageViewWithImage:image frame:frame];
+            });        
+        });
+    }
 }
 
 @end
