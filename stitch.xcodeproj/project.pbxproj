@@ -49,6 +49,7 @@
 		796ACB3416AA594A0083C73F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3316AA594A0083C73F /* Default@2x.png */; };
 		796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3516AA594A0083C73F /* Default-568h@2x.png */; };
 		79F7A1D816ABE0AD0055679B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1D716ABE0AD0055679B /* QuartzCore.framework */; };
+		79F7A1D916ABE19F0055679B /* swypWorkspaceBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A1D616ABDFE90055679B /* swypWorkspaceBackgroundView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -378,6 +379,7 @@
 				4C0B5F6916AA7E00004E76AE /* base64.c in Sources */,
 				4C0B5F6A16AA7E00004E76AE /* NSData+SRB64Additions.m in Sources */,
 				4C0B5F6B16AA7E00004E76AE /* SRWebSocket.m in Sources */,
+				79F7A1D916ABE19F0055679B /* swypWorkspaceBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,8 +19,9 @@
 @implementation swypPrettyPath
 @synthesize drawPath,drawColor;
 -(void)dealloc{
-	SRELS(drawPath); SRELS(drawColor);
-	[super dealloc];
+	drawPath = nil;
+	drawColor = nil;
+	
 }
 @end
 
@@ -56,7 +57,7 @@
 
 - (swypPrettyPath*)	_prettyPath{	
 	swypPrettyPath *	prettyPath	= [[swypPrettyPath alloc] init];
-	UIBezierPath *		path		= [[[UIBezierPath alloc] init] autorelease];
+	UIBezierPath *		path		= [[UIBezierPath alloc] init] ;
 	[path setLineWidth:20];
 	[path  setLineJoinStyle:kCGLineJoinMiter];
 	[path setLineCapStyle:kCGLineCapRound];
