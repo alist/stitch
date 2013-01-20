@@ -48,6 +48,7 @@
 		796ACB3216AA594A0083C73F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3116AA594A0083C73F /* Default.png */; };
 		796ACB3416AA594A0083C73F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3316AA594A0083C73F /* Default@2x.png */; };
 		796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3516AA594A0083C73F /* Default-568h@2x.png */; };
+		79F7A1D816ABE0AD0055679B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1D716ABE0AD0055679B /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,9 @@
 		796ACB3116AA594A0083C73F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		796ACB3316AA594A0083C73F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		796ACB3516AA594A0083C73F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		79F7A1D516ABDFE90055679B /* swypWorkspaceBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swypWorkspaceBackgroundView.h; sourceTree = "<group>"; };
+		79F7A1D616ABDFE90055679B /* swypWorkspaceBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = swypWorkspaceBackgroundView.m; sourceTree = "<group>"; };
+		79F7A1D716ABE0AD0055679B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F7A1D816ABE0AD0055679B /* QuartzCore.framework in Frameworks */,
 				4C0B5F7516AA7EBF004E76AE /* libicucore.dylib in Frameworks */,
 				4C0B5F7316AA7EB9004E76AE /* MobileCoreServices.framework in Frameworks */,
 				4C0B5F7116AA7EB5004E76AE /* SystemConfiguration.framework in Frameworks */,
@@ -199,6 +204,8 @@
 		4CE5DE5716AA66EB00EBC5E7 /* Swyp */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A1D516ABDFE90055679B /* swypWorkspaceBackgroundView.h */,
+				79F7A1D616ABDFE90055679B /* swypWorkspaceBackgroundView.m */,
 				4C0B5B6316AA6EB1004E76AE /* swypGestureRecognizer.h */,
 				4C0B5B6416AA6EB1004E76AE /* swypGestureRecognizer.m */,
 				4C0B5B6516AA6EB1004E76AE /* swypInGestureRecognizer.h */,
@@ -215,6 +222,7 @@
 		796ACB1016AA594A0083C73F = {
 			isa = PBXGroup;
 			children = (
+				79F7A1D716ABE0AD0055679B /* QuartzCore.framework */,
 				4C0B5F7416AA7EBF004E76AE /* libicucore.dylib */,
 				4C0B5F7216AA7EB9004E76AE /* MobileCoreServices.framework */,
 				4C0B5F7016AA7EB5004E76AE /* SystemConfiguration.framework */,
