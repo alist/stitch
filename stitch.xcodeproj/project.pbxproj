@@ -37,6 +37,7 @@
 		4C0B5F7116AA7EB5004E76AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0B5F7016AA7EB5004E76AE /* SystemConfiguration.framework */; };
 		4C0B5F7316AA7EB9004E76AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0B5F7216AA7EB9004E76AE /* MobileCoreServices.framework */; };
 		4C0B5F7516AA7EBF004E76AE /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0B5F7416AA7EBF004E76AE /* libicucore.dylib */; };
+		4C0B5F7F16ABE33D004E76AE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B5F7E16ABE33D004E76AE /* background.png */; };
 		4CE5DE5316AA5FEB00EBC5E7 /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */; };
 		4CE5DE5616AA635200EBC5E7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE5DE5516AA635200EBC5E7 /* background.png */; };
 		796ACB2016AA594A0083C73F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796ACB1F16AA594A0083C73F /* UIKit.framework */; };
@@ -111,6 +112,7 @@
 		4C0B5F7016AA7EB5004E76AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C0B5F7216AA7EB9004E76AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4C0B5F7416AA7EBF004E76AE /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		4C0B5F7E16ABE33D004E76AE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		4CE5DE5116AA5FEB00EBC5E7 /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STViewController.h; sourceTree = "<group>"; };
 		4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STViewController.m; sourceTree = "<group>"; };
 		4CE5DE5516AA635200EBC5E7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		796ACB2516AA594A0083C73F /* stitch */ = {
 			isa = PBXGroup;
 			children = (
+				4C0B5F7E16ABE33D004E76AE /* background.png */,
 				796ACB2E16AA594A0083C73F /* STAppDelegate.h */,
 				796ACB2F16AA594A0083C73F /* STAppDelegate.m */,
 				4CE5DE5116AA5FEB00EBC5E7 /* STViewController.h */,
@@ -341,6 +344,7 @@
 				796ACB3416AA594A0083C73F /* Default@2x.png in Resources */,
 				796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */,
 				4CE5DE5616AA635200EBC5E7 /* background.png in Resources */,
+				4C0B5F7F16ABE33D004E76AE /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
