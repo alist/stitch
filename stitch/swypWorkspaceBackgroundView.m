@@ -36,7 +36,7 @@
         // Initialization code.
 		[self setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
 		
-		self.backgroundColor		= [UIColor grayColor];
+		self.backgroundColor		= [UIColor clearColor];
 		self.opaque					= YES;
 		self.multipleTouchEnabled	= YES;
     }
@@ -58,13 +58,13 @@
 - (swypPrettyPath*)	_prettyPath{	
 	swypPrettyPath *	prettyPath	= [[swypPrettyPath alloc] init];
 	UIBezierPath *		path		= [[UIBezierPath alloc] init] ;
-	[path setLineWidth:20];
+	[path setLineWidth:50];
 	[path  setLineJoinStyle:kCGLineJoinMiter];
 	[path setLineCapStyle:kCGLineCapRound];
-	[path setMiterLimit:.3];
+	[path setMiterLimit:100];
 	[prettyPath setDrawPath:path];
 	
-	UIColor *			pathColor	= [UIColor colorWithRed:0 green:0 blue:1 alpha:.3];
+	UIColor *			pathColor	= [UIColor colorWithRed:1 green:0 blue:.3 alpha:.3];
 	[prettyPath setDrawColor:pathColor];
 	
 	return prettyPath;
