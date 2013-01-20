@@ -71,9 +71,7 @@
             lastImageURL = url;
         }
         
-
-        // warning potentially fucked up math here!
-        CGRect frame = CGRectMake(origin.x + screen.width - boundary.width,
+        CGRect frame = CGRectMake(-origin.x,
                                   origin.y + screen.height - boundary.height,
                                   boundary.width,
                                   boundary.height);
