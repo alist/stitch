@@ -11,6 +11,7 @@
 
 @protocol STConnectionManagerDelegate <NSObject>
 -(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame;
+-(void)displayTokViewWithFrame:(CGRect)frame;
 @end
 
 @interface STConnectionManager : NSObject<SocketIODelegate> {

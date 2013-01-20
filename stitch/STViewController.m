@@ -10,7 +10,6 @@
 #import "swypInGestureRecognizer.h"
 #import "swypOutGestureRecognizer.h"
 #import "STConnectionManager.h"
-#import "swypWorkspaceBackgroundView.h"
 
 @interface STViewController ()
 
@@ -40,7 +39,7 @@
     imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:imageView];
     
-	swypWorkspaceBackgroundView * fingerDrawView = [[swypWorkspaceBackgroundView alloc] initWithFrame:self.view.bounds];
+	fingerDrawView = [[swypWorkspaceBackgroundView alloc] initWithFrame:self.view.bounds];
 	[self.view addSubview:fingerDrawView];
 	
     swypInGestureRecognizer *swypInRecognizer = [[swypInGestureRecognizer alloc] initWithTarget:self
@@ -84,7 +83,7 @@
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Load image", @"Unload content", nil];
+                                                    otherButtonTitles:@"Load image", @"Show TokBox", nil];
     
     [actionSheet showInView:self.view];
 }
@@ -97,7 +96,7 @@
     if(buttonIndex == 0) { // Load image
         [[STConnectionManager sharedManager] sendImageContentURL:@"http://i.imgur.com/LS7csQT.jpg"];
     } else if(buttonIndex == 1) { // Unload content
-        [[STConnectionManager sharedManager] sendImageContentURL:@"about:blank"];
+        [[STConnectionManager sharedManager] sendImageContentURL:@"about:tok"];
     }
 }
 
@@ -116,6 +115,27 @@
     [UIView commitAnimations];
     
     NSLog(@"updated image view to %@ :: %@ // %@",imageView, image, NSStringFromCGRect(imageView.frame));
+}
+
+-(void)displayTokViewWithFrame:(CGRect)frame{
+	if (tokView == nil){
+		tokView = [[STTokView alloc] initWithFrame:frame];
+		[self.view addSubview:tokView];
+		[self.view bringSubviewToFront:fingerDrawView];
+		
+	}
+	
+	[UIView beginAnimations:@"animations" context:@"context"];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.5];
+
+	if(frame.size.width == 0 && frame.size.height == 0)
+        tokView.frame = self.view.bounds;
+    else
+        tokView.frame = frame;
+    
+	[UIView commitAnimations];
+
 }
 
 - (void)didReceiveMemoryWarning
