@@ -103,10 +103,18 @@
 
 -(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame {
     imageView.image = image;
+    
+    [UIView beginAnimations:@"animations" context:@"context"];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:0.5];
+
     if(frame.size.width == 0 && frame.size.height == 0)
         imageView.frame = self.view.bounds;
     else
         imageView.frame = frame;
+    
+    [UIView commitAnimations];
+    
     NSLog(@"updated image view to %@ :: %@ // %@",imageView, image, NSStringFromCGRect(imageView.frame));
 }
 
