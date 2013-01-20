@@ -10,6 +10,7 @@
 #import "swypInGestureRecognizer.h"
 #import "swypOutGestureRecognizer.h"
 #import "STConnectionManager.h"
+#import "swypWorkspaceBackgroundView.h"
 
 @interface STViewController ()
 
@@ -30,14 +31,13 @@
 {
     [super viewDidLoad];
     
-    UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    bg.image = [UIImage imageNamed:@"background.png"];
-    bg.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:bg];
-    
+	
     imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:imageView];
     
+	swypWorkspaceBackgroundView * fingerDrawView = [[swypWorkspaceBackgroundView alloc] initWithFrame:self.view.bounds];
+	[self.view addSubview:fingerDrawView];
+	
     swypInGestureRecognizer *swypInRecognizer = [[swypInGestureRecognizer alloc] initWithTarget:self
                                                                                          action:@selector(swypGestureChanged:)];
     [swypInRecognizer setDelegate:self];
