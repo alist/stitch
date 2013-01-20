@@ -105,6 +105,9 @@
 -(void)updateImageViewWithImage:(UIImage *)image frame:(CGRect)frame {
     imageView.image = image;
     
+    [self.view bringSubviewToFront:imageView];
+    [self.view bringSubviewToFront:fingerDrawView];
+    
     [UIView beginAnimations:@"animations" context:@"context"];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.5];
@@ -123,10 +126,12 @@
 	if (tokView == nil){
 		tokView = [[STTokView alloc] initWithFrame:frame];
 		[self.view addSubview:tokView];
-		[self.view bringSubviewToFront:fingerDrawView];
-		
 	}
 	
+
+    [self.view bringSubviewToFront:tokView];
+    [self.view bringSubviewToFront:fingerDrawView];
+
 	[UIView beginAnimations:@"animations" context:@"context"];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:0.5];
