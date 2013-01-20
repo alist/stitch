@@ -64,7 +64,7 @@
 	[path setMiterLimit:100];
 	[prettyPath setDrawPath:path];
 	
-	UIColor *			pathColor	= [UIColor colorWithRed:1 green:0 blue:.3 alpha:.3];
+	UIColor *			pathColor	= [UIColor colorWithRed:1 green:0 blue:.3 alpha:.4];
 	[prettyPath setDrawColor:pathColor];
 	
 	return prettyPath;
