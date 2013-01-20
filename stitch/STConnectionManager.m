@@ -35,6 +35,16 @@
     int x = (int)point.x;
     int y = height - (int)point.y;
     
+    NSLog(@"OLD X AND Y %i %i",x,y);
+    
+    // scale coordinates to compensate for touchscreen insensitivity
+    double a = 20.0;
+    double b = 20.0;
+    x = (int)round((2*a*x/width)+x-a);
+    y = (int)round((2*b*y/height)+y-b);
+    NSLog(@"NEW X AND Y %i %i",x,y);
+    
+    
     NSLog(@"sending swype in: %i width %i height %i point %i %i",swypIn,width,height,x,y);
     
     [socket sendEvent:@"swypOccurred" withData:@{
