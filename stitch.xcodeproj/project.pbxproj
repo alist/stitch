@@ -51,6 +51,19 @@
 		796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796ACB3516AA594A0083C73F /* Default-568h@2x.png */; };
 		79F7A1D816ABE0AD0055679B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1D716ABE0AD0055679B /* QuartzCore.framework */; };
 		79F7A1D916ABE19F0055679B /* swypWorkspaceBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A1D616ABDFE90055679B /* swypWorkspaceBackgroundView.m */; };
+		79F7A1F216AC06520055679B /* Opentok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1F116AC06520055679B /* Opentok.framework */; };
+		79F7A1F516AC06880055679B /* opentok.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A1F416AC06880055679B /* opentok.bundle */; };
+		79F7A1F816AC07720055679B /* STTokView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A1F716AC07720055679B /* STTokView.m */; };
+		79F7A20316AC0B530055679B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1F916AC0B530055679B /* CoreTelephony.framework */; };
+		79F7A20416AC0B530055679B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FA16AC0B530055679B /* CFNetwork.framework */; };
+		79F7A20516AC0B530055679B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FB16AC0B530055679B /* CoreMedia.framework */; };
+		79F7A20616AC0B530055679B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FC16AC0B530055679B /* AudioToolbox.framework */; };
+		79F7A20716AC0B530055679B /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FD16AC0B530055679B /* CoreAudio.framework */; };
+		79F7A20816AC0B530055679B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FE16AC0B530055679B /* CoreVideo.framework */; };
+		79F7A20916AC0B530055679B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A1FF16AC0B530055679B /* OpenGLES.framework */; };
+		79F7A20A16AC0B530055679B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A20016AC0B530055679B /* libz.dylib */; };
+		79F7A20B16AC0B530055679B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A20116AC0B530055679B /* libstdc++.dylib */; };
+		79F7A20C16AC0B530055679B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7A20216AC0B530055679B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +145,20 @@
 		79F7A1D516ABDFE90055679B /* swypWorkspaceBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swypWorkspaceBackgroundView.h; sourceTree = "<group>"; };
 		79F7A1D616ABDFE90055679B /* swypWorkspaceBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = swypWorkspaceBackgroundView.m; sourceTree = "<group>"; };
 		79F7A1D716ABE0AD0055679B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		79F7A1F116AC06520055679B /* Opentok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Opentok.framework; path = "opentok-ios-sdk/Opentok.framework"; sourceTree = SOURCE_ROOT; };
+		79F7A1F416AC06880055679B /* opentok.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = opentok.bundle; path = "opentok-ios-sdk/Opentok.framework/Versions/A/Resources/opentok.bundle"; sourceTree = SOURCE_ROOT; };
+		79F7A1F616AC07720055679B /* STTokView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTokView.h; sourceTree = "<group>"; };
+		79F7A1F716AC07720055679B /* STTokView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTokView.m; sourceTree = "<group>"; };
+		79F7A1F916AC0B530055679B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		79F7A1FA16AC0B530055679B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		79F7A1FB16AC0B530055679B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		79F7A1FC16AC0B530055679B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		79F7A1FD16AC0B530055679B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		79F7A1FE16AC0B530055679B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		79F7A1FF16AC0B530055679B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		79F7A20016AC0B530055679B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		79F7A20116AC0B530055679B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		79F7A20216AC0B530055679B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +175,17 @@
 				796ACB2016AA594A0083C73F /* UIKit.framework in Frameworks */,
 				796ACB2216AA594A0083C73F /* Foundation.framework in Frameworks */,
 				796ACB2416AA594A0083C73F /* CoreGraphics.framework in Frameworks */,
+				79F7A1F216AC06520055679B /* Opentok.framework in Frameworks */,
+				79F7A20316AC0B530055679B /* CoreTelephony.framework in Frameworks */,
+				79F7A20416AC0B530055679B /* CFNetwork.framework in Frameworks */,
+				79F7A20516AC0B530055679B /* CoreMedia.framework in Frameworks */,
+				79F7A20616AC0B530055679B /* AudioToolbox.framework in Frameworks */,
+				79F7A20716AC0B530055679B /* CoreAudio.framework in Frameworks */,
+				79F7A20816AC0B530055679B /* CoreVideo.framework in Frameworks */,
+				79F7A20916AC0B530055679B /* OpenGLES.framework in Frameworks */,
+				79F7A20A16AC0B530055679B /* libz.dylib in Frameworks */,
+				79F7A20B16AC0B530055679B /* libstdc++.dylib in Frameworks */,
+				79F7A20C16AC0B530055679B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,12 +263,6 @@
 		796ACB1016AA594A0083C73F = {
 			isa = PBXGroup;
 			children = (
-				79F7A1D716ABE0AD0055679B /* QuartzCore.framework */,
-				4C0B5F7416AA7EBF004E76AE /* libicucore.dylib */,
-				4C0B5F7216AA7EB9004E76AE /* MobileCoreServices.framework */,
-				4C0B5F7016AA7EB5004E76AE /* SystemConfiguration.framework */,
-				4C0B5F6E16AA7EA4004E76AE /* CFNetwork.framework */,
-				4C0B5F6C16AA7EA0004E76AE /* Security.framework */,
 				4C0B5F2C16AA7DBB004E76AE /* Socket */,
 				4CE5DE5716AA66EB00EBC5E7 /* Swyp */,
 				796ACB2516AA594A0083C73F /* stitch */,
@@ -250,6 +282,23 @@
 		796ACB1E16AA594A0083C73F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A1D716ABE0AD0055679B /* QuartzCore.framework */,
+				4C0B5F7416AA7EBF004E76AE /* libicucore.dylib */,
+				4C0B5F7216AA7EB9004E76AE /* MobileCoreServices.framework */,
+				4C0B5F7016AA7EB5004E76AE /* SystemConfiguration.framework */,
+				4C0B5F6E16AA7EA4004E76AE /* CFNetwork.framework */,
+				4C0B5F6C16AA7EA0004E76AE /* Security.framework */,
+				79F7A1F116AC06520055679B /* Opentok.framework */,
+				79F7A1F916AC0B530055679B /* CoreTelephony.framework */,
+				79F7A1FA16AC0B530055679B /* CFNetwork.framework */,
+				79F7A1FB16AC0B530055679B /* CoreMedia.framework */,
+				79F7A1FC16AC0B530055679B /* AudioToolbox.framework */,
+				79F7A1FD16AC0B530055679B /* CoreAudio.framework */,
+				79F7A1FE16AC0B530055679B /* CoreVideo.framework */,
+				79F7A1FF16AC0B530055679B /* OpenGLES.framework */,
+				79F7A20016AC0B530055679B /* libz.dylib */,
+				79F7A20116AC0B530055679B /* libstdc++.dylib */,
+				79F7A20216AC0B530055679B /* AVFoundation.framework */,
 				796ACB1F16AA594A0083C73F /* UIKit.framework */,
 				796ACB2116AA594A0083C73F /* Foundation.framework */,
 				796ACB2316AA594A0083C73F /* CoreGraphics.framework */,
@@ -267,6 +316,8 @@
 				4CE5DE5216AA5FEB00EBC5E7 /* STViewController.m */,
 				4C0B5B6F16AA73C6004E76AE /* STConnectionManager.h */,
 				4C0B5B7016AA73C7004E76AE /* STConnectionManager.m */,
+				79F7A1F616AC07720055679B /* STTokView.h */,
+				79F7A1F716AC07720055679B /* STTokView.m */,
 				796ACB2616AA594A0083C73F /* Supporting Files */,
 			);
 			path = stitch;
@@ -275,6 +326,7 @@
 		796ACB2616AA594A0083C73F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A1F416AC06880055679B /* opentok.bundle */,
 				4CE5DE5516AA635200EBC5E7 /* background.png */,
 				796ACB2716AA594A0083C73F /* stitch-Info.plist */,
 				796ACB2816AA594A0083C73F /* InfoPlist.strings */,
@@ -345,6 +397,7 @@
 				796ACB3616AA594A0083C73F /* Default-568h@2x.png in Resources */,
 				4CE5DE5616AA635200EBC5E7 /* background.png in Resources */,
 				4C0B5F7F16ABE33D004E76AE /* background.png in Resources */,
+				79F7A1F516AC06880055679B /* opentok.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +437,7 @@
 				4C0B5F6A16AA7E00004E76AE /* NSData+SRB64Additions.m in Sources */,
 				4C0B5F6B16AA7E00004E76AE /* SRWebSocket.m in Sources */,
 				79F7A1D916ABE19F0055679B /* swypWorkspaceBackgroundView.m in Sources */,
+				79F7A1F816AC07720055679B /* STTokView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +511,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/opentok-ios-sdk\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stitch/stitch-Prefix.pch";
 				INFOPLIST_FILE = "stitch/stitch-Info.plist";
@@ -470,6 +528,10 @@
 		796ACB3B16AA594A0083C73F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/opentok-ios-sdk\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "stitch/stitch-Prefix.pch";
 				INFOPLIST_FILE = "stitch/stitch-Info.plist";

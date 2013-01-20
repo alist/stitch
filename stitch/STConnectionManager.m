@@ -87,8 +87,8 @@
 
     if([url isEqualToString:@"about:blank"]) {
         [self.delegate updateImageViewWithImage:nil frame:frame];
-    } else if(false) { // TO ALEX: override point for TokBox URLs
-        
+    } else if([url isEqualToString:@"about:tok"]) {
+        [self.delegate displayTokViewWithFrame:frame];
     } else { // default to image URLs
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
