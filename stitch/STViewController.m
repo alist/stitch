@@ -36,7 +36,9 @@
     background.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:background];
     
-    imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
     [self.view addSubview:imageView];
     
 	fingerDrawView = [[swypWorkspaceBackgroundView alloc] initWithFrame:self.view.bounds];
