@@ -13,7 +13,7 @@
 }
 @synthesize session = _session;
 -(id)initWithFrame:(CGRect)frame{
-	if (self = [super initWithFrame:self.bounds]){
+	if (self = [super initWithFrame:frame]){
 		_session = [[OTSession alloc] initWithSessionId:kSessionId delegate:self];
 		[self doConnect];
 		
@@ -74,6 +74,7 @@
 {
     NSLog(@"subscriberDidConnectToStream (%@)", subscriber.stream.connection.connectionId);
     [subscriber.view setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+	[subscriber.view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
     [self addSubview:subscriber.view];
 }
 
