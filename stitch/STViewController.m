@@ -30,8 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-	
+    	
     imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:imageView];
     
