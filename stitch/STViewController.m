@@ -30,7 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    	
+    
+    
+    UIImageView *background = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    background.image = [UIImage imageNamed:@"background.png"];
+    background.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view addSubview:background];
+    
     imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:imageView];
     

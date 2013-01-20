@@ -72,7 +72,7 @@
 
 
     if([url isEqualToString:@"about:blank"]) {
-        [self.delegate updateImageViewWithImage:[UIImage imageNamed:@"background.png"] frame:frame];
+        [self.delegate updateImageViewWithImage:nil frame:frame];
     } else if(false) { // TO ALEX: override point for TokBox URLs
         
     } else { // default to image URLs
